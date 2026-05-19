@@ -1,1 +1,2 @@
-npm test
+node scripts/validate-branch-name.mjs
+npx lint-staged
