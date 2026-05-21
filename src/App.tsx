@@ -1,10 +1,22 @@
-import { Button } from '@/components/ui/button'
+import './App.css'
+import Header from './components/dashboard/Header'
+import { Navbar } from './components/dashboard/Navbar'
+import { DashboardSidebar } from './components/dashboard/Sidebar'
+import { SidebarProvider } from '@/components/ui/sidebar'
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-      <Button>Click me</Button>
-    </div>
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full bg-rose-50">
+        <DashboardSidebar />
+
+        <div className="flex-1 w-full">
+          <Navbar />
+          <Header />
+          <main className="p-8 flex-1"></main>
+        </div>
+      </div>
+    </SidebarProvider>
   )
 }
 
